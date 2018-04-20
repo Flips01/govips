@@ -231,6 +231,9 @@ func vipsDetermineImageType(buf []byte) ImageType {
 	if IsTypeSupported(ImageTypeSVG) && buf[0] == 0x3c && buf[1] == 0x3f && buf[2] == 0x78 && buf[3] == 0x6d {
 		return ImageTypeSVG
 	}
+  if  IsTypeSupported(ImageTypeMagick) {
+    return ImageTypeMagick
+  }
 	return ImageTypeUnknown
 }
 
